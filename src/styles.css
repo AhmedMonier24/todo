@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(5,0,36);
+    background: linear-gradient(90deg, rgba(5,0,36,1) 0%, rgba(99,9,121,1) 35%, rgba(0,212,255,1) 100%);}

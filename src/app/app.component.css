@@ -1,0 +1,40 @@
+.containerM {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 50px;
+    border-radius: 5px;
+}
+
+
+.todo-list li {
+    background-color: #bbbbbb41;
+    padding: 5px 10px;
+    color: white;
+    text-decoration: none !important;
+    list-style: none !important;
+    width: 100% !important;
+}
+
+.todo-list p-button {
+    margin-right: 5px !important;
+}
+
+.todo-list li div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center !important;
+    margin-left: 10px !important;
+}
+
+
+
+
+.msg {
+    margin-bottom: 20px;
+}
+
+hr {
+    color: white !important;
+}

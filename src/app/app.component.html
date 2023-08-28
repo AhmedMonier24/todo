@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="containerM">
+    <h1 class="text-center text-light text-uppercase mb-5 mt-5">
+      Todo List App
+    </h1>
+
+    <hr />
+    <form class="todo-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="row">
+        <div class="input-field col s9">
+          <input class="form-control input-group-text rounded-pill" pInputText type="text" name="title" id="title"
+            placeholder="Enter Your Todo" ngModel />
+          <p-button styleClass="p-button-success" class="btn" icon="pi pi-check" label="Submit"
+            (onClick)="onSubmit(f)"></p-button>
+        </div>
+      </div>
+    </form>
+
+    <ul class="todo-list mt-5 list-group list-group-flush" *ngFor="let todo of todos">
+      <li class="list-group-item rounded-pill" *ngIf="!this.todo.isComplete">
+        <div>
+          <div>{{ this.todo.title }}</div>
+          <div>
+            <p-button (click)="onComplete(this.todo.id)" icon="pi pi-check"
+              styleClass="p-button-rounded p-button-warning mr-5"></p-button>
+            <p-button (click)="onDelete(this.todo.id)" icon="pi pi-times"
+              styleClass="p-button-rounded p-button-danger"></p-button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="!todos?.length" class="msg text-warning">
+      Your Todo List is Empty!
+    </div>
+
+    <hr />
+    <br />
+
+    <h1 id="completed-tasks  " class="text-light">Completed Tasks</h1>
+    <hr />
+    <ul class="todo-list" *ngFor="let todo of todos">
+      <li *ngIf="this.todo.isComplete">
+        <div>
+          <div>{{ this.todo.title }}</div>
+          <div>
+            <p-button (click)="onDelete(this.todo.id)" icon="pi pi-times"
+              styleClass="p-button-rounded p-button-danger"></p-button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <p-button icon="pi pi-times" styleClass="p-button-danger w-50 mb-2" (click)="onDeleteAllTodos()">Delete All
+    </p-button>
+    <div class="text-light">You cannot recover deleted files</div>
+  </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<router-outlet></router-outlet>
